@@ -1,116 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulir Penyewaan</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Formulir Penyewaan Mobil</title>
     <style>
-        /* Umum */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f4e1f2; /* Latar belakang lilac */
             display: flex;
-            justify-content: center; /* Menyusun elemen di tengah secara horizontal */
-            align-items: center; /* Menyusun elemen di tengah secara vertikal */
-            height: 100vh; /* Mengatur tinggi body sesuai viewport */
-            background-color: #f3f4f6; /* Latar belakang halaman */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-
-        header {
-            text-align: center;
-            margin-bottom: 20px;
+        .container {
+            background-color: #f9e1f2; /* Warna pink muda */
+            padding: 20px; /* Kurangi padding untuk memperkecil ukuran */
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px; /* Kurangi lebar maksimum */
+            box-sizing: border-box;
         }
-
         h1 {
-            color: #333;
-        }
-
-        main {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 500px; /* Batas lebar formulir */
-        }
-
-        form label {
-            display: block;
-            margin: 10px 0 5px;
-            font-weight: bold;
-        }
-
-        form input,
-        form select,
-        form button {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-
-        form button {
-            background-color: #ec407a;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        form button:hover {
-            background-color: #ce93d8;
-        }
-
-        footer {
             text-align: center;
-            margin-top: 20px;
+            color: #d172b4; /* Warna pink */
+            margin-bottom: 15px; /* Kurangi jarak antara judul dan formulir */
+            font-size: 20px; /* Perkecil ukuran font */
         }
-
-        footer p {
-            color: #666;
-            font-size: 14px;
+        label {
+            font-size: 14px; /* Perkecil ukuran font */
+            color: #7a5175; /* Warna lilac */
+        }
+        input[type="text"], input[type="date"], input[type="file"], select {
+            width: 100%;
+            padding: 8px; /* Kurangi padding untuk memperkecil elemen */
+            margin-bottom: 10px; /* Kurangi jarak antar elemen */
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px; /* Perkecil ukuran font */
+        }
+        button {
+            background-color: #d172b4; /* Pink */
+            color: white;
+            padding: 8px; /* Kurangi padding tombol */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px; /* Perkecil ukuran font */
+            width: 100%;
+        }
+        button:hover {
+            background-color: #b85c98; /* Pink lebih gelap */
+        }
+        .output {
+            margin-top: 15px; /* Kurangi jarak atas */
+            border: 1px solid #ddd;
+            padding: 10px; /* Kurangi padding */
+            background: #f2d4e6; /* Warna pink muda untuk output */
+            border-radius: 5px;
+        }
+        .output h2 {
+            color: #d172b4;
+            text-align: center;
+            font-size: 18px; /* Perkecil ukuran font judul output */
+        }
+        .output p {
+            font-size: 14px; /* Perkecil ukuran font output */
+            color: #7a5175;
         }
     </style>
 </head>
 <body>
-    <header>
+    <div class="container">
         <h1>Formulir Penyewaan Mobil</h1>
-    </header>
+        <form id="rentalForm">
+            <label for="nama">Nama Penyewa:</label><br>
+            <input type="text" id="nama" name="nama" required><br>
 
-    <main>
-        <form action="php/proses-peminjaman.php" method="POST" enctype="multipart/form-data">
-            <label for="nama">Nama Penyewa:</label>
-            <input type="text" id="nama" name="nama" required>
+            <label for="ktp">Unggah Identitas (KTP/SIM):</label><br>
+            <input type="file" id="ktp" name="ktp" accept=".jpg, .jpeg, .png" required><br>
 
-            <label for="identitas">Upload Identitas (KTP/SIM):</label>
-            <input type="file" id="identitas" name="identitas" required>
+            <label for="kontak">Kontak:</label><br>
+            <input type="text" id="kontak" name="kontak" required><br>
 
-            <label for="kontak">Kontak:</label>
-            <input type="text" id="kontak" name="kontak" required>
-
-            <label for="mobil">Pilih Mobil:</label>
+            <label for="mobil">Pilih Mobil:</label><br>
             <select id="mobil" name="mobil" required>
-                <option value="1">Jeep Wrangler Rubicon 4Door unlimitied - Rp 5.000.000/day</option>
-                <option value="2">BMW i5- Rp 6.000.000/day</option>
-                <option value="3">Harimau Medium Tank - Rp 10.000.000/day</option>
-                <option value="4">Buggati La Voiture Noire - Rp 8.000.000/day</option>
-                <option value="5">Porsche 911 GT3 RS- Rp 7.000.000/day</option>
-            </select>
+                <option value="1">Jeep Wrangler Rubicon 4Door
+                    unlimitied - Rp 5.000.000/day</option>
+                    <option value="2">BMW i5- Rp
+                    6.000.000/day</option>
+                    <option value="3">Harimau Medium Tank - Rp
+                    10.000.000/day</option>
+                    <option value="4">Buggati La Voiture Noire - Rp
+                    8.000.000/day</option>
+                    <option value="5">Porsche 911 GT3 RS- Rp
+                    7.000.000/day</option>
+            </select><br>
 
-            <label for="tanggal_pinjam">Tanggal Pinjam:</label>
-            <input type="date" id="tanggal_pinjam" name="tanggal_pinjam" required>
+            <label for="tglPinjam">Tanggal Pinjam:</label><br>
+            <input type="date" id="tglPinjam" name="tglPinjam" required><br>
 
-            <label for="tanggal_kembali">Tanggal Kembali:</label>
-            <input type="date" id="tanggal_kembali" name="tanggal_kembali" required>
+            <label for="tglKembali">Tanggal Kembali:</label><br>
+            <input type="date" id="tglKembali" name="tglKembali" required><br>
 
-            <button type="submit">Sewa Mobil</button>
+            <button type="button" onclick="tampilkanData()">Sewa Mobil</button>
         </form>
-    </main>
 
-    <footer>
-        <p>&copy; 2024 PT. Bendi Car</p>
-    </footer>
+        <div id="output" class="output" style="display: none;">
+            <h2>Detail Penyewaan</h2>
+            <p id="outputNama"></p>
+            <p id="outputKontak"></p>
+            <p id="outputMobil"></p>
+            <p id="outputTglPinjam"></p>
+            <p id="outputTglKembali"></p>
+        </div>
+    </div>
+
+    <script>
+        function tampilkanData() {
+            const nama = document.getElementById('nama').value;
+            const kontak = document.getElementById('kontak').value;
+            const mobil = document.getElementById('mobil').value;
+            const tglPinjam = document.getElementById('tglPinjam').value;
+            const tglKembali = document.getElementById('tglKembali').value;
+
+            document.getElementById('outputNama').innerText = `Nama Penyewa: ${nama}`;
+            document.getElementById('outputKontak').innerText = `Kontak: ${kontak}`;
+            document.getElementById('outputMobil').innerText = `Mobil yang Disewa: ${mobil}`;
+            document.getElementById('outputTglPinjam').innerText = `Tanggal Pinjam: ${tglPinjam}`;
+            document.getElementById('outputTglKembali').innerText = `Tanggal Kembali: ${tglKembali}`;
+
+            document.getElementById('output').style.display = 'block';
+        }
+    </script>
 </body>
 </html>

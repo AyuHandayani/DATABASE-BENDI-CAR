@@ -2,59 +2,119 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f3e5f5; 
-    color: #333;
-}
-
-.container {
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
+    background-color: #f8bbd0; 
 }
 
 header {
-    background-color: #ec407a; 
+    background-color: #ad1457; 
     color: white;
-    padding: 10px 0;
-    font-size: 24px;
-    font-weight: bold;
+    padding: 15px;
+}
+
+.dashboard-container {
+    display: flex;
 }
 
 .menu {
-    position: fixed;
-    right: 20px;
-    top: 20px;
-    background-color: #ce93d8; 
+    width: 200px;
+    background-color: #f3e5f5; 
     padding: 20px;
-    border-radius: 8px;
-    color: white;
-    text-align: left;
 }
 
 .menu h3 {
-    margin: 0 0 10px 0;
-    font-size: 18px;
+    margin-top: 0;
 }
 
 .menu a {
     display: block;
-    background-color: #ec407a; 
+    background-color: #ad1457; 
     color: white;
     text-decoration: none;
     padding: 10px;
-    margin: 5px 0;
-    border-radius: 4px;
-    text-align: center;
+    margin-bottom: 10px;
 }
 
 .menu a:hover {
-    background-color: #d81b60;
+    background-color: #8e0e36; 
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
 }
 
 footer {
-    margin-top: 20px;
-    background-color: #ce93d8; 
+    background-color: #f3e5f5; 
+    color: #ad1457; 
+    text-align: center;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.login-container h1 {
+    margin-bottom: 20px;
+    color: #ad1457; 
+}
+
+.login-container input,
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.login-container button {
+    background-color: #ad1457; 
     color: white;
-    padding: 10px 0;
-    font-size: 12px;
+    border-radius: 5px;
+}
+
+.login-container button:hover {
+    background-color: #8e0e36; 
+}
+
+.data-table {
+    width: calc(100% - 40px);
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+    border-bottom: 2px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.data-table th {
+    background-color: #ad1457; 
+    color: white;
+}
+
+.btn-add,
+.btn-back {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ad1457; 
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-add:hover,
+.btn-back:hover {
+    background-color: #8e0e36; 
+}
+
+.error {
+    color: red;
+    margin-bottom: 15px;
 }
